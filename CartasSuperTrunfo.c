@@ -3,8 +3,10 @@
 int main(){
     char estado, codigo[5], estado2, codigo2[5]; //a variável codigo é sobre o codigo da carta
     int populacao, turisticos, populacao2, turisticos2;
-    float area, pib, area2, pib2;
+    float area, pib, area2, pib2, densidade, densidade2, pibcapita, pibcapita2;
     char cidade[50], cidade2[50];
+
+    //ENTRADA E LEITURA DE DADOS
 
     printf("Olá, vamos iniciar o cadastro da CARTA 1 carta!\n");
 
@@ -64,33 +66,41 @@ int main(){
     printf("=====================================================================\n");
     printf("Carta 2 \nEstado: %c \nCódigo: %s \nNome da cidade: %s\nPopulação: %d \nÁrea: %.2f km² \nPIB: %.2f \nPontos turisticos: %d\n", estado2, codigo2, cidade2,area2, populacao2, area2, pib2, turisticos2);
     
-    printf("=====================================================================\n");
-    printf("-> ANALISANDO A CATEGORIA POPULAÇÃO: \n");
-    if(populacao > populacao2){
-        printf("Carta 1 venceu! \n");
+    
+   
+    //cálculo de densidade
+    densidade = populacao/area;
+    densidade2 = populacao2/area2;
+
+    //cálculo PIB per capita
+    pibcapita = pib/populacao;
+    pibcapita2 = pib/populacao;
+
+    printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+    
+    //Comparação de Área 
+    printf("COMPARAÇÃO DA ÁREA\n");
+    if (area > area2){
+        printf("Carta 1 venceu \n");
+    } else if(area2 > area){
+        printf("Carta 2 venceu \n");
     }else{
-        printf("Carta 2 venceu! \n");
+        printf("Empate \n");
     }
 
-    printf("-> ANALISANDO A CATEGORIA ÁREA: \n");
-    if(area > area2){
-        printf("Carta 1 venceu! \n");
+    printf(".........................................................................\n");
+
+    //Comparação  Densidade
+    printf("COMPARAÇÃO DA DENSIDADE\n");
+    if (densidade < densidade2){
+        printf("Carta 2 venceu \n");
+    } else if(densidade2 < densidade){
+        printf("Carta 2 venceu \n");
     }else{
-        printf("Carta 2 venceu! \n");
+        printf("Empate \n");
     }
 
-    printf("-> ANALISANDO A CATEGORIA PIB: \n");
-    if(pib > pib2){
-        printf("Carta 1 venceu! \n");
-    }else{
-        printf("Carta 2 venceu! \n");
-    }
 
-    printf("-> ANALISANDO A CATEGORIA PONTOS TURISTICOS: \n");
-    if(turisticos > turisticos2){
-        printf("Carta 1 venceu! \n");
-    }else{
-        printf("Carta 2 venceu! \n");
-    }
 
+    
 }
