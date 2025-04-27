@@ -7,14 +7,20 @@ int main(){
     char cidade[50], cidade2[50];
 
     //ENTRADA E LEITURA DE DADOS
+    printf("\n");
 
-    printf("Olá, vamos iniciar o cadastro da CARTA 1 carta!\n");
+    printf("Olá, vamos iniciar o cadastro da CARTA 1 carta:\n");
+
+    printf("\n");
+    
 
     printf("Digite o estado com uma letra de 'A' a 'H': \n");
     scanf(" %c", &estado);
+
+    getchar(); //limpa o enter
     
     printf("Digite o código da carta, para isso digite a letra escolhida seguida de um número de 01 a 04: \n");
-    scanf(" %s", codigo);
+    scanf("%s", codigo);
     
     
     printf("Digite o nome da cidade sem espaços: \n");
@@ -34,14 +40,19 @@ int main(){
 
     printf("----------------------------------------------------------------------\n");
 
-    printf("Olá, vamos iniciar o cadastro da CARTA 2 carta!\n");
+    printf("Agora vamos iniciar o cadastro da CARTA 2 carta:\n");
+
+    printf("\n");
+    
 
     printf("Digite o estado com uma letra de 'A' a 'H': \n");
     scanf(" %c", &estado2);
+
+    getchar(); //LIMPA O ENTER
     
     printf("Digite o código da carta, para isso digite a letra escolhida seguida de um número de 01 a 04: \n");
     scanf("%s", codigo2);
-    getchar();
+    
     
     
     printf("Digite o nome da cidade sem espaços: \n");
@@ -59,46 +70,47 @@ int main(){
     printf("Digite numero de pontos turisticos: \n");
     scanf("%d", &turisticos2);
 
+    printf("\n");    
 
-    printf("----------------------------------------\n");
 
-    printf("Carta 1 \nEstado: %c \nCódigo: %s \nNome da cidade: %s\nPopulação: %d \nÁrea: %.2f km² \nPIB: %.2f \nPontos turisticos: %d\n", estado, codigo, cidade, populacao, area, pib, turisticos);
-    printf("=====================================================================\n");
-    printf("Carta 2 \nEstado: %c \nCódigo: %s \nNome da cidade: %s\nPopulação: %d \nÁrea: %.2f km² \nPIB: %.2f \nPontos turisticos: %d\n", estado2, codigo2, cidade2,area2, populacao2, area2, pib2, turisticos2);
-    
-    
-   
+    printf("---------------REVISANDO OS DADOS-------------------------\n");
+
     //cálculo de densidade
     densidade = populacao/area;
     densidade2 = populacao2/area2;
-
+    
     //cálculo PIB per capita
     pibcapita = pib/populacao;
-    pibcapita2 = pib/populacao;
+    pibcapita2 = pib2/populacao2;
 
-    printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+    printf("Carta 1 \nEstado: %c \nCódigo: %s \nNome da cidade: %s\nPopulação: %d \nÁrea: %.2f km² \nPIB: %.2f \nPontos turisticos: %d\nDensidade: %.2f\nPIB per capita: %.2f\n", estado, codigo, cidade, populacao, area, pib, turisticos, densidade, pibcapita);
+    printf("=====================================================================\n");
+    printf("Carta 2 \nEstado: %c \nCódigo: %s \nNome da cidade: %s\nPopulação: %d \nÁrea: %.2f km² \nPIB: %.2f \nPontos turisticos: %d\nDensidade: %.2f\nPIB per capita: %.2f", estado2, codigo2, cidade2, populacao2, area2, pib2, turisticos2, densidade2, pibcapita2);
     
+       
+    
+    
+    printf("\n");
+
+    printf("//////////////////////////////////////////////////////////////////\n");
+
+    printf("\n");
+
     //Comparação de Área 
-    printf("COMPARAÇÃO DA ÁREA\n");
+    printf("--> COMPARAÇÃO DE ÁREA (maior área vence) <--\n");
     if (area > area2){
-        printf("Carta 1 venceu \n");
+        printf("- Carta 1 - Área: %.2fkm²\n- Carta 2 - Área: %.2f km²\n", area, area2);
+        printf("CARTA 1 VENCEU \n");
     } else if(area2 > area){
-        printf("Carta 2 venceu \n");
+        printf("- Carta 1 - Área: %.2f km²\n- Carta 2 - Área: %.2f km²\n", area, area2);
+        printf("CARTA 2 VENCEU \n");
     }else{
         printf("Empate \n");
     }
 
-    printf(".........................................................................\n");
+    printf("...............................FIM.......................................\n");
 
-    //Comparação  Densidade
-    printf("COMPARAÇÃO DA DENSIDADE\n");
-    if (densidade < densidade2){
-        printf("Carta 2 venceu \n");
-    } else if(densidade2 < densidade){
-        printf("Carta 2 venceu \n");
-    }else{
-        printf("Empate \n");
-    }
+    
 
 
 
