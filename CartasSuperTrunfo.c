@@ -380,13 +380,22 @@ int main()
 
         resultado = soma1 > soma2 ? 1 : 0;
 
-        if (resultado == 1)
+        switch (resultado)
         {
-            printf("CARTA 1 VENCEU A RODADA!\n");
-        }
-        else
-        {
-            printf("CARTA 2 VENCEU A RODADA!\n");
+        case 1:
+            if (resultado==1)
+            {
+                printf("carta 1 venceu!\n");
+            }
+            break;
+        case 2:
+            if (resultado==0){
+                printf("carta 2 venceu!\n");
+            }    
+            break;
+        default:
+            printf("EMPATE\n");
+        
         }
         printf("\n");
 
